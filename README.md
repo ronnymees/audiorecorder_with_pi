@@ -8,6 +8,9 @@ We use a Raspberry Pi 4 and Zoom N1 microphone for the recordings.
 Connections are made as follows:
 ![image](./images/schema.png)
 
+In order to be able to place the hardware in an production environment a box was created that will be 3D printed.
+![image](./images/case.png)
+
 ## Functionality
 This python program starts recording audio when a button is pushed.
 The recordings are being writed to .WAV files of a predefined size.

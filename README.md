@@ -4,11 +4,11 @@
 In order to record audio as data samples for training a AI model we needed a device that we can setup in the productionline and can be started and stopped as needed. All recordings are by default pass, when a faulty product is recorded this must be labeled as so.
 
 ## Hardware
-We use a Raspberry Pi 4 and Zoom N1 microphone for the recordings.
+We use a Raspberry Pi 4 and Zoom H1 microphone for the recordings.
 Connections are made as follows:
 ![image](./images/schema.png)
 
-In order to be able to place the hardware in an production environment a box was created that will be 3D printed.
+In order to be able to place the hardware in an production environment a box was created that will be 3D printed (stl-files included in the cad-folder).
 ![image](./images/case.png)
 
 ## Functionality

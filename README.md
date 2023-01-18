@@ -3,6 +3,11 @@
 ## Goal
 In order to record audio as data samples for training a AI model we needed a device that we can setup in the productionline and can be started and stopped as needed. All recordings are by default pass, when a faulty product is recorded this must be labeled as so.
 
+## Hardware
+We use a Raspberry Pi 4 and Zoom N1 microphone for the recordings.
+Connections are made as follows:
+![image](./images/schema.png)
+
 ## Functionality
 This python program starts recording audio when a button is pushed.
 The recordings are being writed to .WAV files of a predefined size.

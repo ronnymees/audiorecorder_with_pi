@@ -17,7 +17,8 @@ GPIO.output(led_out,0)
 #Initialize Recorder
 rec = Recorder(channels=2)
 recfile = None
-recordStatus = False;
+recordStatus = False
+interval=300 #5 minutes
 
 #Function write to text file
 def writeLog(message):
@@ -56,7 +57,7 @@ def nextFile():
         stopRecording()
         time.sleep(1)
         startRecording()
-        t = threading.Timer(10, nextFile)
+        t = threading.Timer(interval, nextFile)
         t.start()
     
 #Callback function for start/stop recording switch
@@ -66,7 +67,7 @@ def startstop_callback(channel):
             recordStatus = not recordStatus
             if(recordStatus):
                 startRecording()
-                t = threading.Timer(10, nextFile)
+                t = threading.Timer(interval, nextFile)
                 t.start()
             else:
                 stopRecording()
@@ -82,13 +83,10 @@ GPIO.add_event_detect(startstop_switch, GPIO.RISING, callback=startstop_callback
 GPIO.add_event_detect(fault_switch, GPIO.RISING, callback=fault_callback, bouncetime=500)
 
 #Set threading
-t = threading.Timer(10, nextFile)
+t = threading.Timer(interval, nextFile)
 
 #Loop until exit with keyboard
-try: 
-    input() 
-
-except KeyboardInterrupt: 
+while(True):
     pass 
     
 GPIO.cleanup()

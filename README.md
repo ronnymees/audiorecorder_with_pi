@@ -16,6 +16,21 @@ In order to be able to place the hardware in an production environment a box was
 ### OS
 We used a clean install of Raspberry Pi OS with the default user `pi` and password `raspberry`.
 
+## Python libraries
+We will be using the Python library `pyaudio` to record the audio data from the USB mic. 
+
+Before we can get started with `pyaudio`, we need to ensure that the RPi has all the necessary prerequisites by installing the following packages:
+
+```bash
+sudo apt-get install libportaudio0 libportaudio2 libportaudiocpp0 portaudio19-dev
+```
+
+If the above is successful, then we can download the ‘pyaudio’ library:
+
+```bash
+sudo pip3 install pyaudio
+```
+
 ### Source code 
 
 We developed a Python script for this application that runs an endless loop and uses callback functions triggered by the push buttons or a time interval.
